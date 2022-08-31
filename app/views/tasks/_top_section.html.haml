@@ -24,7 +24,12 @@
       %td
         .label.req #{t :category}:
         = f.select :category, @category, { selected: @task.category.blank? ? nil : @task.category.to_sym, include_blank: t(:select_blank) }, { style: "width:160px", class: 'select2' }
-
+      %tr
+        %td(colspan="5")
+          .label.top.req #{t :Tags}:
+          = f.select :task_tag,"", {}, {class: "select2_tag", data: {tags: true, placeholder: t(:select_tags), multiple: true}, multiple: true}
+    %tr
+      %td
     - if Setting.background_info && Setting.background_info.include?(:task)
       %tr
         %td(colspan="5")
