@@ -68,7 +68,8 @@ class TasksController < ApplicationController
   def create
     @view = view
     @task = Task.new(task_params) # NOTE: we don't display validation messages for tasks.
-
+    tags = params[:task][:task_tag]
+    @task.task_tag << tags
     respond_with(@task) do |_format|
       if @task.save
         update_sidebar if called_from_index_page?
@@ -177,7 +178,8 @@ class TasksController < ApplicationController
       :completed_at,
       :deleted_at,
       :background_info,
-      :calendar
+      :calendar,
+      :task_tag
     )
   end
 
