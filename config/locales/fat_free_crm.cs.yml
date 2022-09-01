@@ -642,6 +642,7 @@ cs:
   unassigned: Nepřiřazeno
   tags: Štítky
   select_or_create_tags: Zvolte nebo vytvořte
+  select_tags: Vyberte si etiketu pro „vstup“.
   comment: Komentáře
   comment_intro: Přidejte komentář.
   no_task_records: Nenalezeny žádné úlohy

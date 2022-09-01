@@ -838,6 +838,7 @@ fr:
   save_field_group: enregistrer la section
   field_group_empty: Il n'y a aucun champ dans cette section
   select_or_create_tags: Sélectionner un tag ou créez un nouveau tag en validant par
+  select_tags: Seleccione algunas etiquetas presionando 'entrer'.
     la touche entrée.
   restrict_by_tag: Restriction par tag
   restrict_by_tag_info: Cette section ne sera visible que pour les %{assets} qui seront

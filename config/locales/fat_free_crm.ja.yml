@@ -833,6 +833,7 @@ ja:
   save_field_group: フィールドグループを保存
   field_group_empty: このグループにはフィールドはありません。
   select_or_create_tags: いくつかのタグを選択するか、エンターキーを押して新しいタグを作成することが可能です。
+  select_tags: Seleccione algunas etiquetas presionando 'enter'.
   restrict_by_tag: ! 'タグで制限する:'
   restrict_by_tag_info: (以下のタグが付いた%{assets}のフィールドのみを表示)
   field_group_tag_restriction: このフィールドグループは、「%{tag}」でタグ付けされた%{assets}に適用されます

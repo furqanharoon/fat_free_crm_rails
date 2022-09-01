@@ -623,6 +623,7 @@ de:
   conversion_label: Konversion (%)
   no_tasks_assigned: zugeordnet
   select_or_create_tags: Wähle einige Markierungen aus oder erstelle eine neue Markierung
+  select_tags: Vælg nogle tags ved at trykke på 'enter'.
     durch Drücken der "enter"-Taste.
   phone_small: Telefon
   user_suspended: Gesperrt

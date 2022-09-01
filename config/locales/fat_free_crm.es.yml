@@ -824,6 +824,7 @@ es:
   save_field_group: Guardar grupo de campos
   field_group_empty: No hay campos en este grupo.
   select_or_create_tags: Selecciona alguna etiqueta, o crea una nueva pulsando 'enter'.
+  select_tags: Seleccione algunas etiquetas presionando 'enter'.
   restrict_by_tag: ! 'Restringir por Etiqueta:'
   restrict_by_tag_info: (Solo muestra campos para %{assets} que están etiquetadas con lo siguiente)
   field_group_tag_restriction: Este grupo de campos se aplica a %{assets} etiquetadas por "%{tag}"

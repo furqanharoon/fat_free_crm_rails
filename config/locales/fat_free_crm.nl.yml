@@ -830,6 +830,7 @@ nl:
   save_field_group: bewaar veld groep
   field_group_empty: Èr zijn geen velden in deze groep.
   select_or_create_tags: Selecteer een paar tags, of maak een nieuwe tag door op 'enter' te drukken.
+  select_tags: Seleccione algunas etiquetas presionando 'enter'.
   restrict_by_tag: ! 'Toon alleen bij Tag:'
   restrict_by_tag_info: (toon allen voor %{assets} die deze tag hebben)
   field_group_tag_restriction: Deze velden groep hoort bij %{assets} getagged met "%{tag}"

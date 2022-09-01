@@ -834,6 +834,7 @@ et:
   save_field_group: Salvesta väljagrupp
   field_group_empty: Selles grupis ei ole välju.
   select_or_create_tags: Vali märgned või loo uus märgend vajutades 'enter' klahvi.
+  select_tags: Valige algunas etiquetas presionando 'sisesta'.
   restrict_by_tag: ! 'Kitsenda märgendi järgi:'
   restrict_by_tag_info: (Näita vaid %{assets} välju, millel on järgnevad märgendid)
   field_group_tag_restriction: See väljagrupp hõlmab vaid %{assets}, millel on "%{tag}" märgend

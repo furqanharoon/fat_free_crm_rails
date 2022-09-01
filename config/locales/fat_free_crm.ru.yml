@@ -889,9 +889,9 @@ ru:
   save_field_group: Записать группу полей
   field_group_empty: Нет полей в этой группе.
   select_or_create_tags: Выберите нужные метки или создайте новую нажав 'Enter'.
+  select_tags: Seleccione algunas etiquetas presionando 'войти'.
   restrict_by_tag: ! 'Фильтр по категории:'
   restrict_by_tag_info: (Only show fields for %{assets} that are tagged with the following)
-  restrict_by_tag_info: (Показать только поля для %{assets}, которые относятся к следующей категории)
   field_group_tag_restriction: Эта группа полей относится ко %{assets} отмеченными "%{tag}"
   field_group_unrestricted:  Эта группа полей относится ко всем %{assets}
   field_group_confirm_delete: Если удалить группу полей, все пользовательские поля будуь перемещены в группу полей по умолчанию.
