@@ -7,7 +7,7 @@
 #------------------------------------------------------------------------------
 FactoryBot.define do
   factory :task do
-    user
+    user                
     asset               { nil }
     assigned_to         { nil }
     completed_by        { nil }
@@ -19,6 +19,7 @@ FactoryBot.define do
     background_info     { FFaker::Lorem.paragraph[0, 255] }
     completed_at        { nil }
     deleted_at          { nil }
+    task_tag            { nil }
     updated_at          { FactoryBot.generate(:time) }
     created_at          { FactoryBot.generate(:time) }
   end
