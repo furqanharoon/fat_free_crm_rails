@@ -18,6 +18,11 @@
         %td
           .label #{t :phone}:
           = f.text_field :phone
+        %tr
+        %td(colspan="5")
+          .label.top.req #{t :skills}:
+          %br
+          = f.select :lead_skills,"", {}, {class: "select2_tag",style: "width:508px;", data: {tags: true, placeholder: t(:select_skills), multiple: true}, multiple: true}
 
       - if Setting.background_info && Setting.background_info.include?(:lead)
         %tr
