@@ -47,6 +47,7 @@ class Lead < ActiveRecord::Base
   has_one :business_address, -> { where "address_type='Business'" }, dependent: :destroy, as: :addressable, class_name: "Address"
   has_many :addresses, dependent: :destroy, as: :addressable, class_name: "Address" # advanced search uses this
   has_many :emails, as: :mediator
+  belongs_to :account, optional: true # TODO: Is this really optional?
 
   serialize :subscribed_users, Set
 
