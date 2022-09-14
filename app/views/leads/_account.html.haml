@@ -1,0 +1,17 @@
+
+
+- edit ||= false
+- collapsed = session[:lead_account].nil? # && @lead.errors.empty?
+= subtitle :lead_account, collapsed, t(:account)
+
+.section
+  %small#lead_status_intro{ hidden_if(!collapsed) }
+    = t(:intro_account, t(:accounts_small)) unless edit
+  #lead_account{ hidden_if(collapsed) }
+    %table
+      %tr
+        %td
+          .label.top #{t :assigned_to}:
+          = user_select(:account, User.without_user(current_user), current_user)
+        %td= spacer
+        %td
