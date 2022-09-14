@@ -276,6 +276,7 @@ cs:
   date_updated: Upraveno
   fax: Fax
   intro: Později můžete přidat %{value}.
+  intro_account: Později můžete přidat %{value}.
   keep_private: Uchovat soukromé, nesdílet s ostatními
   mail_to: Email na %{value}
   make_public: Sdílet s ostatními

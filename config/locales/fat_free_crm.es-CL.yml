@@ -328,6 +328,7 @@ es-CL:
   date_updated: Fecha de modificación
   fax: Fax
   intro: Puede añadir información de %{value} más tarde.
+  intro_account: Puede asignar %{value} más tarde.
   mobile_small: móvil
   open_in_window: Abrir %{value} en una ventana nueva
   mail_to: Correo electrónico a %{value}

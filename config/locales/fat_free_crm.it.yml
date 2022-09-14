@@ -252,6 +252,7 @@ it:
   date_updated: Data aggiornamento
   fax: Fax
   intro: Puoi aggiungere %{value} informazioni piu' tardi.
+  intro_account: Puoi assegnare %{value} in un secondo momento.
   keep_private: Mantienilo proivato, non condividilo con altri
   mail_to: Mail a %{value}
   make_public: Condividilo con tutti

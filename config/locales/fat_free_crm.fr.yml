@@ -324,6 +324,7 @@ fr:
   date_updated: Date de modification
   fax: Fax
   intro: Vous pouvez ajouter les informations de %{value} plus tard.
+  intro_account: Vous pouvez attribuer %{value} plus tard.
   keep_private: Garder privé, ne pas partager avec les autres
   mail_to: Envoyer à %{value}
   make_public: Partager avec tous

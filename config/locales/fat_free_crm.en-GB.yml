@@ -325,6 +325,7 @@ en-GB:
   date_updated: Date Updated
   fax: Fax
   intro: You can add %{value} information later.
+  intro_account: You can assign %{value} later.
   keep_private: Keep it private, do not share with others
   mail_to: Mail to %{value}
   make_public: Share it with everyone

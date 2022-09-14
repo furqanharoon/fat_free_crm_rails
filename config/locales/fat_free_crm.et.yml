@@ -319,6 +319,7 @@ et:
   date_updated: Muutmiskuupäev
   fax: Faks
   intro: Sa võid %{value} info lisada hiljem.
+  intro_account: Saate määrata %{value} hiljem.
   keep_private: Hoia seda salajas ning ära jaga teistega
   mail_to: Postita aadressile %{value}
   make_public: Jaga kõigiga

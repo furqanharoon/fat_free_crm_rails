@@ -690,6 +690,7 @@ de:
   save_contact: Kontakt sichern
   word_of_mouth: Mundpropaganda
   intro: Sie können die Informationen für %{value} später ändern.
+  intro_account: Sie können %{value} später zuweisen.
   at: bei
   option_ends_on: Enddatum
   recent_activity_options: Letzte Aktivitäten Einstellungen

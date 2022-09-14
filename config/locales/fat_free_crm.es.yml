@@ -318,6 +318,7 @@ es:
   date_updated: Fecha de Actualización
   fax: Fax
   intro: Puede añadir %{value} Información despues.
+  intro_account: Puede añadir %{value} despues.
   keep_private: Mantenerlo privado, no compartir con otros usuarios
   mail_to: Email a %{value}
   make_public: Compartir con todo el mundo
