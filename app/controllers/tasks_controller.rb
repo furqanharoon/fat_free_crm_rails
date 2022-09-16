@@ -72,6 +72,8 @@ class TasksController < ApplicationController
     @task.task_tag << tags
     respond_with(@task) do |_format|
       if @task.save
+        assign_to = User.find(@task&.assigned_to)
+        TaskMailer.send_email_to_task_user(assign_to,current_user).deliver_now
         update_sidebar if called_from_index_page?
       end
     end
