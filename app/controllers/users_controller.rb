@@ -132,7 +132,11 @@ class UsersController < ApplicationController
       :aim,
       :yahoo,
       :google,
-      :skype
+      :skype,
+      :zoom,
+      :google_duo,
+      :telegram,
+      :emo
     )
   end
 

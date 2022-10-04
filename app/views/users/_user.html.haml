@@ -14,6 +14,7 @@
         = h(@user.title) unless @user.title.blank?
         = h(@user.company) unless @user.company.blank?
       %br
+      %h4 Contact Information
       %div
         - unless @user.email.blank?
           #{t :email}: #{auto_link(@user.email)}
@@ -28,6 +29,59 @@
         - if @user.mobile.present?
           = t(:mobile) + ":"
           = content_tag(:b, @user.mobile)
-
+      %div= spacer
+      - if !@user.aim.blank? && !@user.yahoo.blank? && !@user.google.blank? && !@user.telegram.blank?
+        %h4 Instant Messaging
+        %div
+          = t(:"AOL IM") + ":"
+          %a{:href => "#{@user.aim}"} #{@user.aim}  
+          = t(:", Yahoo") + ":"
+          %a{:href => "#{@user.yahoo}"} #{@user.yahoo}  
+          = t(:", Google") + ":"
+          %a{:href => "#{@user.google}"} #{@user.google} 
+          = t(:", Telegram") + ":"
+          %a{:href => "#{@user.telegram}"} #{@user.telegram}
+      - else
+        -if @user.aim.present? || @user.yahoo.present? || @user.google.present? || @user.telegram.present?
+          %h4 Instant Messaging
+          - if @user.aim.present?
+            = t(:"AOL IM") + ":"
+            %a{:href => "#{@user.aim}"} #{@user.aim} 
+          - if @user.yahoo.present?
+            = t(:"Yahoo") + ":"
+            %a{:href => "#{@user.yahoo}"} #{@user.yahoo}
+          - if @user.google.present?
+            = t(:"Google") + ":"
+            %a{:href => "#{@user.google}"} #{@user.google}
+          - if @user.telegram.present?
+            = t(:"Telegram") + ":"
+            %a{:href => "#{@user.telegram}"} #{@user.telegram}
+      %div= spacer
+      - if !@user.zoom.blank? && !@user.google_duo.blank? && !@user.emo.blank? && !@user.skype.blank?
+        %h4 Video Calling
+        %div
+          = t(:"Zoom") + ":"
+          %a{:href => "#{@user.zoom}"} #{@user.zoom}  
+          = t(:", Google Duo") + ":"
+          %a{:href => "#{@user.google_duo}"} #{@user.google_duo}  
+          = t(:", Emo") + ":"
+          %a{:href => "#{@user.emo}"} #{@user.emo} 
+          = t(:", Skype") + ":"
+          %a{:href => "#{@user.skype}"} #{@user.skype}
+      - else
+        -if @user.zoom.present? || @user.google_duo.present? || @user.emo.present? || @user.skype.present?
+          %h4 Instant Messaging
+          - if @user.aim.present?
+            = t(:"Zoom") + ":"
+            %a{:href => "#{@user.zoom}"} #{@user.zoom}
+          - if @user.google_duo.present?
+            = t(:"Google Duo") + ":"
+            %a{:href => "#{@user.google_duo}"} #{@user.google_duo}
+          - if @user.emo.present?
+            = t(:"Emo") + ":"
+            %a{:href => "#{@user.emo}"} #{@user.emo}
+          - if @user.skype.present?
+            = t(:"Skype") + ":"
+            %a{:href => "#{@user.skype}"} #{@user.skype}
 - if Setting.per_user_locale
   %script= render "languages"
