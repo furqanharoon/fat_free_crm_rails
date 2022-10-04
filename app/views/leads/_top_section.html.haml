@@ -4,20 +4,20 @@
     %table
       %tr
         %td
-          .label.top{ class: "#{Setting.require_first_names ? 'req' : nil}" } #{t :first_name}:
-          = f.text_field :first_name, autofocus: true
+          .label.top{ class: "#{Setting.require_first_names ? 'req' : nil}" } #{t :first_name }:
+          = f.text_field :first_name, autofocus: true , placeholder: "John"
         %td= spacer
         %td
-          .label.top{ class: "#{Setting.require_last_names ? 'req' : nil}" } #{t :last_name}:
-          = f.text_field :last_name
+          .label.top #{t :last_name }:
+          = f.text_field :last_name , placeholder: "Smith"
       %tr
         %td
-          .label #{t :email}:
-          = f.text_field :email
+          .label #{t :email }:
+          = f.text_field :email , placeholder: "name@example.com"
         %td= spacer
         %td
-          .label #{t :phone}:
-          = f.text_field :phone
+          .label #{t :phone }:
+          = f.text_field :phone , placeholder: "+1 123 456 7890"
 
       - if Setting.background_info && Setting.background_info.include?(:lead)
         %tr
