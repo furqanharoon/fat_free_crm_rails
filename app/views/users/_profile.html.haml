@@ -42,44 +42,46 @@
           %td{ colspan: 3 }
             .label #{t :mobile}:
             = f.text_field :mobile 
-    .subtitle #{t :"Instant Messaging"}
-    .section
-      %table  
-        %tr
-          %td
-            .label #{t :aim}:
-            = f.text_field :aim, style: "width:112px"
-          %td= spacer
-          %td
-            .label #{t :yahoo}:
-            = f.text_field :yahoo, style: "width:112px"
-          %td= spacer
-          %td
-            .label #{t :google}:
-            = f.text_field :google, style: "width:112px"
-          %td= spacer
-          %td
-            .label #{t :Telegram}:
-            = f.text_field :telegram, style: "width:112px"
-    .subtitle #{t :"Video Calling"}
-    .section
-      %table  
-        %tr
-          %td
-            .label #{t :Zoom}:
-            = f.text_field :zoom, style: "width:112px"
-          %td= spacer
-          %td
-            .label #{t :"Google Duo"}:
-            = f.text_field :google_duo, style: "width:112px"
-          %td= spacer
-          %td
-            .label #{t :Emo}:
-            = f.text_field :emo, style: "width:112px"
-          %td= spacer
-          %td
-            .label #{t :skype}:
-            = f.text_field :skype, style: "width:112px"
+    .subtitle{:class => "im"} #{t :"Add Instant Messaging"}
+    %div{:class => "showim"}
+      .section
+        %table  
+          %tr
+            %td
+              .label #{t :aim}:
+              = f.text_field :aim, style: "width:112px"
+            %td= spacer
+            %td
+              .label #{t :yahoo}:
+              = f.text_field :yahoo, style: "width:112px"
+            %td= spacer
+            %td
+              .label #{t :google}:
+              = f.text_field :google, style: "width:112px"
+            %td= spacer
+            %td
+              .label #{t :Telegram}:
+              = f.text_field :telegram, style: "width:112px"
+    .subtitle{:class => "vc"} #{t :"Add Video Calling"}
+    %div{:class => "showvc"}
+      .section
+        %table  
+          %tr
+            %td
+              .label #{t :Zoom}:
+              = f.text_field :zoom, style: "width:112px"
+            %td= spacer
+            %td
+              .label #{t :"Google Duo"}:
+              = f.text_field :google_duo, style: "width:112px"
+            %td= spacer
+            %td
+              .label #{t :Emo}:
+              = f.text_field :emo, style: "width:112px"
+            %td= spacer
+            %td
+              .label #{t :skype}:
+              = f.text_field :skype, style: "width:112px"
     .buttonbar
       = f.submit t :Update  
       #{t :or}
@@ -87,3 +89,16 @@
 
   = hook(:profile_user_bottom, self)
 %br
+
+:javascript
+     
+     $(document).ready(function(){
+      $(".showim").hide();
+      $(".showvc").hide();
+      $(".im").click(function(){
+        $(".showim").slideToggle();
+      });
+      $(".vc").click(function(){
+        $(".showvc").slideToggle();
+      });
+     })
