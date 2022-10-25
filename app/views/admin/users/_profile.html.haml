@@ -8,8 +8,9 @@
       %td= spacer
       %td
         .label.top.req #{t :email}:
-        = f.email_field :email 
-       
+        = f.email_field :email , {:class => "email"}
+        %h4{:class => "invalid_email"} Email not formatted
+        %h4{:class => "valid_email"} Email formatted
     %tr
       %td
         .label #{t :password}:
@@ -59,13 +60,29 @@
      $(document).ready(function(){
        $(".match").hide();
        $(".notmatch").hide();
+       $(".invalid_email").hide();
+        $('.valid_email').hide();
        $(".confirm_password").keyup(function(){
           if($(".password").val() == $(".confirm_password").val()){
-             $(".match").show();
+             $(".match").show().css("color" , "green");
              $(".notmatch").hide();
           }else{
              $(".match").hide();
-             $(".notmatch").show();
+             $(".notmatch").show().css("color" , "red");
           }
        })
+       $(".email").keyup(function(){
+          if(validateEmail($(".email").val())==false){
+                $('.invalid_email').show().css("color" , "red");
+                $('.valid_email').hide();
+            }else{
+               $('.valid_email').show().css("color" , "green");
+               $('.invalid_email').hide();
+            }
+       })
+       
      })
+    function validateEmail($email) {
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      return emailReg.test( $email );
+     }
