@@ -61,7 +61,10 @@ class ContactsController < EntitiesController
   def create
     @comment_body = params[:comment_body]
     respond_with(@contact) do |_format|
+     
       if @contact.save_with_account_and_permissions(params.permit!)
+        @contact.company = params[:contact][:company]
+        @company.save
         @contact.add_comment_by_user(@comment_body, current_user)
         @contacts = get_contacts if called_from_index_page?
       else

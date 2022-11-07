@@ -88,7 +88,8 @@ module AccountsHelper
     title = contact.title
     department = contact.department
     account = contact.account
-    account_text = ""
+    company = contact.company
+    account_text = contact.company
     account_text = link_to_if(can?(:read, account), h(account.name), account_path(account)) if account.present?
 
     text += if title.present? && department.present?
@@ -98,7 +99,7 @@ module AccountsHelper
             elsif department.present?
               t(:account_with_title, title: h(department), account: account_text)
             elsif account_text.present?
-              t(:works_at, job_title: "", company: account_text)
+              t(:works_at, job_title: "", account: account_text)
             else
               ""
         end

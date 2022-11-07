@@ -13,23 +13,34 @@
             = f.text_field :title
           %td= spacer
           %td
+            .label #{t :Company}:
+            = f.text_field :company
+          %td= spacer
+          
+        %tr  
+          %td
             .label #{t :department}:
             = f.text_field :department
-        %tr
+          %td= spacer
           %td
             .label #{t :alt_email}:
             = f.text_field :alt_email
           %td= spacer
+        %tr
           %td
             .label #{t :mobile}:
             = f.text_field :mobile
-        %tr
-          %td
-            = render "shared/address", f: f, asset: @contact, type: 'business', title: :address
           %td= spacer
           %td
             .label #{t :fax}:
             = f.text_field :fax
+        %tr
+          %td
+            = render "shared/address", f: f, asset: @contact, type: 'business', title: :address
+          
+         
+       
+       
             %div{style: "margin-top:6px"}
               .check_box
                 = f.check_box :do_not_call, {}, true
