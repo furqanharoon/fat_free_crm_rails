@@ -20,7 +20,8 @@ if defined?(FatFreeCRM::Application)
     # Show full error reports and disable caching
     config.consider_all_requests_local       = true
     config.action_controller.perform_caching = false
-
+    # config.action_mailer.delivery_method = :letter_opener
+    config.action_mailer.perform_deliveries = true
     config.action_mailer.delivery_method = :file
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
@@ -47,5 +48,8 @@ if defined?(FatFreeCRM::Application)
     # Checks for improperly declared sprockets dependencies.
     # Raises helpful error messages.
     config.assets.raise_runtime_errors = true
+
+    config.action_mailer.delivery_method = :letter_opener
+    config.action_mailer.perform_deliveries = true
   end
 end
