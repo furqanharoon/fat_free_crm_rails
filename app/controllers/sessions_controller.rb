@@ -8,8 +8,15 @@
 class SessionsController < Devise::SessionsController
   respond_to :html
   append_view_path 'app/views/devise'
+  # skip_before_action :verify_authenticity_token
 
   def after_sign_out_path_for(*)
     new_user_session_path
+  end
+
+
+  def after_sign_in_path_for(resource_or_scope)
+    # debugger
+    stored_location_for(resource_or_scope) || root_path
   end
 end

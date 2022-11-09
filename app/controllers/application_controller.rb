@@ -6,6 +6,7 @@
 # See MIT-LICENSE file or http://www.opensource.org/licenses/mit-license.php
 #------------------------------------------------------------------------------
 class ApplicationController < ActionController::Base
+  # debugger
   protect_from_forgery with: :exception
 
   before_action :configure_devise_parameters, if: :devise_controller?
@@ -59,7 +60,6 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-
   # To deal with pre rails 6 users, reset the session and ask them to relogin
   rescue_from ArgumentError do |exception|
     if request.format.html? && exception.message == "invalid base64"
@@ -69,7 +69,9 @@ class ApplicationController < ActionController::Base
       raise(exception)
     end
   end
-
+  # def new_session_path(scope)
+  #   new_user_session_path
+  # end
   private
 
   #
@@ -254,7 +256,7 @@ class ApplicationController < ActionController::Base
 
   def configure_devise_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-      user_params.permit(:username, :email, :password, :password_confirmation)
+      user_params.permit(:username, :email, :password, :password_confirmation , :uid , :provider , :avatar_url)
     end
   end
 

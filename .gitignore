@@ -37,3 +37,5 @@ Design
 
 .passenger
 .vagrant
+
+/config/master.key

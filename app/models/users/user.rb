@@ -48,7 +48,7 @@
 
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
-         :encryptable, :recoverable, :rememberable, :trackable , :lockable
+         :encryptable, :recoverable, :rememberable, :trackable , :lockable , :omniauthable , omniauth_providers: [:google_oauth2]
   before_create :suspend_if_needs_approval
 
   has_one :avatar, as: :entity, dependent: :destroy  # Personal avatar.
@@ -102,6 +102,7 @@ class User < ActiveRecord::Base
   def name
     first_name.blank? ? username : first_name
   end
+
 
   #----------------------------------------------------------------------------
   def full_name
@@ -203,6 +204,21 @@ class User < ActiveRecord::Base
       if login = conditions.delete(:email)
         where(conditions.to_h).where(["lower(username) = :value OR lower(email) = :value", { value: login.downcase }]).first
       end
+    end
+
+      # Omniauth  
+#----------------------------------------------------------------------------
+    def from_omniauth(access_token)
+        user = User.where(email: access_token.info.email).first
+        unless user
+            user = User.create(
+            email: access_token.info.email,
+            password: Devise.friendly_token[0,20])
+        end
+        user.uid = access_token.uid
+        user.provider = access_token.provider
+        user.save
+        user
     end
   end
 
