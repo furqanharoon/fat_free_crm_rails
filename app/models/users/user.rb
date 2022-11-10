@@ -97,6 +97,9 @@ class User < ActiveRecord::Base
   validates :password,
             presence: { if: :password_required? },
             confirmation: true
+  validates :alt_email, 
+            uniqueness: true,
+            confirmation: true
 
   #----------------------------------------------------------------------------
   def name
