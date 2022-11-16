@@ -33,7 +33,12 @@
           %td= spacer
           %td{ colspan: 3 }
             .label.top #{t :alt_email}:
-            = f.text_field :alt_email
+            = f.text_field :alt_email ,{:class => "alt_email"}
+            %div.responce
+            %button.create_alt_email Add
+            - if current_user.alt_emails.count > 0
+              = link_to "View All Alternate emails" , view_alt_email_alt_emails_path
+            
         %tr
           %td{ colspan: 3 }
             .label #{t :phone}:
@@ -101,4 +106,27 @@
       $(".vc").click(function(){
         $(".showvc").slideToggle();
       });
+
+      $(".create_alt_email").click(function(e){
+        e.preventDefault();
+        var get_alt_email = $(".alt_email").val();
+        send_data = {alt_email: get_alt_email }
+      $.ajax({
+        type: 'POST',
+        url: '/users/create_alt_email',
+        beforeSend: function(xhr) {xhr.setRequestHeader("X-CSRF-Token", $("meta[name='csrf-token']").attr("content"))},
+        data: send_data,
+        dataType: 'script',
+        success: function(data) {
+        console.log("okay")
+        }
+      });
+      })
+
+      $(".view_alt_email").click(function(e){
+        e.preventDefault();
+      })
      })
+      
+     
+ 

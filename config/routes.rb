@@ -25,10 +25,10 @@ Rails.application.routes.draw do
     resources :users, only: %i[index show] do
       collection do
         get :opportunities_overview
+        post :create_alt_email
       end
     end
   end
-
   get 'activities' => 'home#index'
   get 'admin'      => 'admin/users#index',       as: :admin
   get 'profile'    => 'users#show',              as: :profile
@@ -39,9 +39,13 @@ Rails.application.routes.draw do
   match '/home/timezone', as: :timezone, via: %i[get put post]
   post '/home/redraw', as: :redraw
 
+  resources :alt_emails do
+    collection do
+      get :view_alt_email
+    end
+  end
   resources :comments,       except: %i[new show]
   resources :emails,         only: [:destroy]
-
   resources :accounts, id: /\d+/ do
     collection do
       get :advanced_search

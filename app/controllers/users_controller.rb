@@ -14,6 +14,23 @@ class UsersController < ApplicationController
 
   respond_to :html, only: %i[show new]
 
+
+
+ # GET /create user alt_emails
+  #----------------------------------------------------------------------------
+  def create_alt_email
+    @alt_email = AltEmail.new({:alt_email => params[:alt_email] , :user_id => current_user.id})
+    respond_to do |format|
+      if @alt_email.save
+        format.html
+        format.js  {@alt_email = true}
+      else
+        format.html
+        format.js  {@alt_email = false}
+      end
+    end
+  end
+
   # GET /users/1
   # GET /users/1.js
   #----------------------------------------------------------------------------

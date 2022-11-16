@@ -23,6 +23,9 @@
             #{t :email}: #{auto_link(@user.email)}
           - unless @user.alt_email.blank?
             #{t :or} #{auto_link(@user.alt_email)}
+          - if current_user.alt_emails.count > 0
+            #{t :or}
+            = link_to "View all Alternate Emails" , view_alt_email_alt_emails_path
         - if !@user.phone.blank? && !@user.mobile.blank?
           %div #{t :phone}: <b>#{@user.phone}</b>, #{t :mobile}: <b>#{@user.mobile}</b>
         - else

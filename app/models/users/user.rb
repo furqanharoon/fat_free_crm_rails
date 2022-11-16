@@ -63,6 +63,7 @@ class User < ActiveRecord::Base
   has_many :permissions, dependent: :destroy
   has_many :preferences, dependent: :destroy
   has_many :lists
+  has_many :alt_emails
   has_and_belongs_to_many :groups
 
   has_paper_trail versions: { class_name: 'Version' }, ignore: [:last_sign_in_at]
@@ -84,7 +85,7 @@ class User < ActiveRecord::Base
       .where("opportunities.stage <> 'lost' AND opportunities.stage <> 'won'")
       .select('DISTINCT(users.id), users.*')
   }
-
+  validates :alt_email, uniqueness: true
   validates :email,
             presence: { message: :missing_email },
             length: { minimum: 3, maximum: 254 },
@@ -97,15 +98,11 @@ class User < ActiveRecord::Base
   validates :password,
             presence: { if: :password_required? },
             confirmation: true
-  validates :alt_email, 
-            uniqueness: true,
-            confirmation: true
 
   #----------------------------------------------------------------------------
   def name
     first_name.blank? ? username : first_name
   end
-
 
   #----------------------------------------------------------------------------
   def full_name
