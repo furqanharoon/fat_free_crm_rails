@@ -52,6 +52,7 @@ th:
   meeting: ประชุม
   money: เก็บเงิน
   trip: เดินทาง
+  competition: การแข่งขัน
   overdue: เกินกำหนด
   due_asap: เร็วที่สุดเท่าที่เป็นไปได้
   due_today: วันนี้
@@ -100,6 +101,8 @@ th:
               missing_first_name: ^โปรดระบุชื่อจริง
             last_name:
               missing_last_name: ^โปรดระบุนามสกุล
+            email:
+              missing_email: ^กรอกอีเมล  
             access:
               share_contact: ^โปรดระบุผู้ใช้ที่ต้องการใช้ที่อยู่ติดต่อร่วมกัน
         lead:
