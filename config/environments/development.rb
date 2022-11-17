@@ -47,5 +47,9 @@ if defined?(FatFreeCRM::Application)
     # Checks for improperly declared sprockets dependencies.
     # Raises helpful error messages.
     config.assets.raise_runtime_errors = true
+
+    ##Letter_opener
+    config.action_mailer.delivery_method = :letter_opener
+    config.action_mailer.perform_deliveries = true
   end
 end
