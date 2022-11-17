@@ -70,6 +70,7 @@ fr:
   meeting: Réunion
   money: Finance
   trip: Voyage
+  competition: Concurrence
   overdue: Délai expiré
   due_asap: Dès que possible
   due_today: Aujourd'hui
@@ -125,6 +126,8 @@ fr:
               missing_first_name: ^Précisez le prénom
             last_name:
               missing_last_name: ^Précisez le nom.
+            email:
+              missing_email: ^Entrez l'e-mail.  
             access:
               share_contact: ^Précisez avec quel utilisateur partager le contact.
         lead:
