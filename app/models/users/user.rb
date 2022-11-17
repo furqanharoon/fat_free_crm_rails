@@ -48,8 +48,11 @@
 
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
-         :encryptable, :recoverable, :rememberable, :trackable
+         :encryptable, :recoverable, :rememberable, :trackable, authentication_keys: [:login]
   before_create :suspend_if_needs_approval
+
+  attr_writer :login
+  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   has_one :avatar, as: :entity, dependent: :destroy  # Personal avatar.
   has_many :avatars                                  # As owner who uploaded it, ex. Contact avatar.
@@ -97,6 +100,11 @@ class User < ActiveRecord::Base
   validates :password,
             presence: { if: :password_required? },
             confirmation: true
+                     
+   #---------------------------------------------------------------------------
+  def login
+    @login || self.username || self.email
+  end          
 
   #----------------------------------------------------------------------------
   def name
@@ -197,14 +205,20 @@ class User < ActiveRecord::Base
     end
 
     # Overrides Devise sign-in to use either username or email (case-insensitive)
-    #----------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------
     def find_for_database_authentication(warden_conditions)
       conditions = warden_conditions.dup
-      if login = conditions.delete(:email)
-        where(conditions.to_h).where(["lower(username) = :value OR lower(email) = :value", { value: login.downcase }]).first
+        if login = conditions.delete(:login)
+          where(conditions.to_h).where(["lower(username) = :value OR lower(email) = :value", { value: login.downcase }]).first
+        else
+            if conditions[:username].nil?
+              where(conditions).first
+            else
+              where(username: conditions[:username]).first
+            end  
+        end
       end
     end
-  end
 
   ActiveSupport.run_load_hooks(:fat_free_crm_user, self)
 end
