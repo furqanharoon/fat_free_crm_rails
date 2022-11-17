@@ -127,6 +127,8 @@ cs:
               missing_first_name: ^Zadejte jméno.
             last_name:
               missing_last_name: ^Zadejte příjmení.
+            email:
+              missing_email: ^Zadejte email
             access:
               share_contact: ^Určete uživatele pro sdílení kontaktu.
         lead:
