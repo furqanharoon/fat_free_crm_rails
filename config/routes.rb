@@ -146,6 +146,7 @@ Rails.application.routes.draw do
       match :auto_complete, via: %i[get post]
     end
     member do
+      get :show_task
       put :complete
       put :uncomplete
     end
@@ -208,5 +209,6 @@ Rails.application.routes.draw do
 
     resources :settings, only: :index
     resources :plugins,  only: :index
+
   end
 end
