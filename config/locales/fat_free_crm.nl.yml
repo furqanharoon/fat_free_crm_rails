@@ -70,6 +70,7 @@ nl:
   meeting: Vergadering
   money: Geld
   trip: Reis
+  competition: Wedstrijd
   overdue: Achterstallig
   due_asap: Zo snel mogelijk
   due_today: Vandaag
@@ -124,6 +125,8 @@ nl:
               missing_first_name: ^Geef alstublieft een voornaam op.
             last_name:
               missing_last_name: ^Geef alstublieft een achternaam op.
+            email:
+              missing_email: ^Voer email in.  
             access:
               share_contact: ^Geef alstublieft op met welke gebruikers dit contact gedeeld moet worden.
         lead:
