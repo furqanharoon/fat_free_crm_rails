@@ -13,8 +13,16 @@
             = f.text_field :title
           %td= spacer
           %td
+            = f.association :companies,
+            label_method: lambda { |companies| "#{companies.name}"}, 
+            :label => "Select Company:",                             
+            as: :select,
+            input_html: { class: "value-selector" },                 
+            item_wrapper_class: 'value-item select-2'  
+        %tr
+          %td
             .label #{t :department}:
-            = f.text_field :department
+            = f.text_field :department    
         %tr
           %td
             .label #{t :alt_email}:
@@ -34,3 +42,9 @@
               .check_box
                 = f.check_box :do_not_call, {}, true
                 #{t :do_not_call}
+
+
+:javascript
+  $(document).ready(function() {
+    $('.value-selector').select2();
+  });
