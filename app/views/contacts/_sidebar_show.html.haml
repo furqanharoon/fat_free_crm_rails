@@ -17,8 +17,7 @@
     - unless @contact.alt_email.blank?
       == #{t :alt_email_small}: <b>#{link_to_email(@contact.alt_email)}</b><br />
 
-  = web_presence_icons(@contact)
-
+  = web_presence_icons(@contact) 
   .caption #{t :contact_summary}
   %dl
     %li
@@ -38,6 +37,11 @@
         - else
           #{t :n_a}
       %tt #{t :campaign}:
+    %li
+      %dt
+        %p Qualification:
+        - if @contact.qualification.present?
+          %b= @contact.qualification  
 
   - unless @contact.background_info.blank?
     .caption #{t :background_info}
