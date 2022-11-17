@@ -52,6 +52,7 @@ pl:
   meeting: Spotkanie
   money: Pieniądze
   trip: Podróż
+  competition: Konkurencja
   overdue: Zaległe
   due_asap: ASAP
   due_today: Dziś
@@ -101,6 +102,8 @@ pl:
               missing_first_name: ^Proszę podać imię.
             last_name:
               missing_last_name: ^Proszę podać nazwisko.
+            email:
+              missing_email: ^Wprowadź e-mail.  
             access:
               share_contact: ^Proszę podać użytkowników mających dostęp do kontaktu.
         lead:
