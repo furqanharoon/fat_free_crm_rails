@@ -5,6 +5,7 @@
     .strip.other #{t :other}
 
   .tools
+    = link_to_show_task(assigned, bucket) + " | " 
     = link_to_task_edit(assigned, bucket) + " | "
     = link_to_discard(assigned) + " | " if shown_on_landing_page?
     = link_to_task_delete(assigned, bucket)
