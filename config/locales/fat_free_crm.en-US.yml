@@ -43,6 +43,7 @@ en-US:
   on_hold: On Hold
   completed: Completed
   called_off: Called Off
+  ended: Ended
   new: New
   contacted: Contacted
   converted: Converted
@@ -70,6 +71,7 @@ en-US:
   meeting: Meeting
   money: Money
   trip: Trip
+  competition: Competition
   overdue: Overdue
   due_asap: As Soon As Possible
   due_today: Today
@@ -125,6 +127,8 @@ en-US:
               missing_first_name: ^Please specify first name.
             last_name:
               missing_last_name: ^Please specify last name.
+            email: 
+              missing_email: ^Please enter email.  
             access:
               share_contact: ^Please specify users with whom to share the contact.
         lead:
@@ -525,6 +529,7 @@ en-US:
   no_tasks_assigned: assigned
   no_tasks_completed: completed
   pending_tab: Pending
+  alltasks_tab: All Tasks 
   pending_tasks: Pending Tasks
   related: ! 're:'
   save_task: Save Task
