@@ -18,8 +18,11 @@
         = link_to(t(:sign_up_now), new_registration_path(resource_name))
     .title= t(:login)
     .section
-      .label= t(:username)
-      = f.input_field :email, as: :string
+      -# .label= t(:username)
+      -# = f.input_field :username, minlength: 1
+      -# .label= t(:Email)
+      %label Username or Email
+      = f.text_field :login, as: :string
       .label= t(:password)
       = f.input_field :password
 

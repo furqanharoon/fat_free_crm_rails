@@ -93,7 +93,7 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'execjs'
 # gem 'therubyracer', platform: :ruby unless ENV["CI"]
-gem 'mini_racer'
+gem 'mini_racer', '~> 0.6.3'
 gem 'nokogiri', '>= 1.8.1'
 gem 'activemodel-serializers-xml'
 gem 'bootsnap', require: false
@@ -104,3 +104,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'activejob'
 gem 'ransack_ui'
 gem 'bootstrap', '5.0.0'
+gem 'haml', '~> 5.2', '>= 5.2.2'
+gem 'ransack', '~> 2.6'
+gem 'jquery-rails'
+gem 'pry'
+gem 'activestorage'
+gem 'rateyo-rails'
+gem "letter_opener", group: :development

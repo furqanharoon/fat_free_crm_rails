@@ -17,8 +17,11 @@
           = f.select :status, lead_status_codes_for(@lead), { selected: (@lead.status || "new").to_sym }, { style: "width:160px", class: 'select2' }
         %td= spacer
         %td
-          .label.top #{t :rating}:
-          = rating_select "lead[rating]", { id: :lead_rating, selected: @lead.rating, style: "width:160px" }
+          -# rating feature
+          = f.label :rating
+          .rateyo
+          %p
+          = f.hidden_field :rating, id: 'rating', value: ''
       %tr
         %td
           .label #{t :source}:
@@ -34,3 +37,25 @@
             = collection_select :lead, :campaign_id, @campaigns, :id, :name, { selected: @campaign.id }, { style: "width:100%", disabled: true, class: 'select2' }
           - else
             = collection_select :lead, :campaign_id, @campaigns, :id, :name, { selected: @lead.campaign_id, include_blank: t(:select_none) }, { style: "width:100%", onchange: "crm.flip_campaign_permissions(this.value)", class: 'select2' }
+
+
+:javascript
+    // rating ajax
+    var rat;
+    var rating;
+    $(function () {
+    $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+      starWidth: "20px",
+      rat = data.rating;
+      // setting data in hidden field
+      document.getElementById('rating').value = rat;
+   });
+   $('.submit').click( function(){
+   $.ajax({
+         url: "/leads",
+         data: $('.form').serialize(),
+          type: 'GET',
+          dataType: script
+      });
+   }
+   )});
