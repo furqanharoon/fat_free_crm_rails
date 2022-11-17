@@ -69,6 +69,7 @@ ja:
   meeting: 会議
   money: Money
   trip: 出張
+  competition: 競争
   overdue: 期限切れ
   due_asap: できるだけ早く
   due_today: 今日中
@@ -123,6 +124,8 @@ ja:
               missing_first_name: ^名を指定してください。
             last_name:
               missing_last_name: ^姓を指定してください。
+            email:
+              missing_email: ^メールアドレスを入力して
             access:
               share_contact: ^取引先責任者を共有するユーザーを指定してください。
         lead:
