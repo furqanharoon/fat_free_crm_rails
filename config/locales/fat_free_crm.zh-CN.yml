@@ -70,6 +70,7 @@ zh-CN:
   meeting: 会议
   money: 钱
   trip: 旅行
+  competition: 竞赛
   overdue: 逾期
   due_asap: 尽快
   due_today: 今天
@@ -125,6 +126,8 @@ zh-CN:
               missing_first_name: ^请指定用户的名
             last_name:
               missing_last_name: ^请指定用户的姓
+            email:
+              missing_email: ^输入电子邮件  
             access:
               share_contact: ^请指定可以共享联系人的用户
         lead:
