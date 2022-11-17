@@ -258,6 +258,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) do |user_params|
       user_params.permit(:username, :email, :password, :password_confirmation , :uid , :provider , :avatar_url)
     end
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+      user_params.permit(:login , :password )
+    end
   end
 
   def find_class(asset)
