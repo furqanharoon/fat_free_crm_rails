@@ -78,6 +78,7 @@ class ApplicationController < ActionController::Base
   # to halt proceedings. In Rails 4, use "protect_from_forgery with: :exception"
   # See http://blog.nvisium.com/2014/09/understanding-protectfromforgery.html for more details.
   #----------------------------------------------------------------------------
+  
   def handle_unverified_request
     raise ActionController::InvalidAuthenticityToken
   end
@@ -255,6 +256,10 @@ class ApplicationController < ActionController::Base
   def configure_devise_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |user_params|
       user_params.permit(:username, :email, :password, :password_confirmation)
+    end
+    
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+      user_params.permit(:login, :password)
     end
   end
 
