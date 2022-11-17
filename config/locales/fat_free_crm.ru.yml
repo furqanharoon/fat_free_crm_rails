@@ -70,6 +70,7 @@ ru:
   meeting: Встреча
   money: Деньги
   trip: Поездка
+  competition: конкуренция
   overdue: Задержка
   due_asap: Как можно скорее
   due_today: Сегодня
@@ -125,6 +126,8 @@ ru:
               missing_first_name: ^Пожалуйста введите имя.
             last_name:
               missing_last_name: ^Пожалуйста введите фамилию.
+            email:
+              missing_email: ^Введите адрес электронной почты.  
             access:
               share_contact: ^Пожалуйста укажите пользователей которым разрешен доступ к данному контакту.
         lead:
