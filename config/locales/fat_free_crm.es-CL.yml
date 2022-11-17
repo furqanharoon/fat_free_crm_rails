@@ -70,6 +70,7 @@ es-CL:
   meeting: Reunión
   money: Dinero
   trip: Viaje
+  competition: Competencia
   overdue: Atrasada
   due_asap: Cuanto antes
   due_today: Hoy
@@ -125,6 +126,8 @@ es-CL:
               missing_first_name: ^Introduzca el nombre, por favor.
             last_name:
               missing_last_name: ^Introduzca los apellidos, por favor.
+            email:
+              missing_email: ^Ingrese correo electrónico.  
             access:
               share_contact: ^Especifique con qué usuarios quiere compartir éste contacto.
         lead:
