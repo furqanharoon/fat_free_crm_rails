@@ -52,6 +52,9 @@ class Contact < ActiveRecord::Base
   has_many :addresses, dependent: :destroy, as: :addressable, class_name: "Address" # advanced search uses this
   has_many :emails, as: :mediator
 
+  has_many :contact_company
+  has_many :companies, through: :contact_company
+
   delegate :campaign, to: :lead, allow_nil: true
 
   has_ransackable_associations %w[account opportunities tags activities emails addresses comments tasks]
@@ -96,6 +99,7 @@ class Contact < ActiveRecord::Base
 
   validates_presence_of :first_name, message: :missing_first_name, if: -> { Setting.require_first_names }
   validates_presence_of :last_name,  message: :missing_last_name,  if: -> { Setting.require_last_names  }
+  validates_presence_of :email,  message: :missing_email,  if: -> { Setting.require_email  }
   validate :users_for_shared_access
 
   validates_length_of :first_name, maximum: 64
