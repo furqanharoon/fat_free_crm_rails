@@ -52,6 +52,7 @@ sv-SE:
   meeting: Möte
   money: Betalning
   trip: Resa
+  competition: Konkurrens
   overdue: Förfallen
   due_asap: Snarast möjligt
   due_today: Idag
@@ -100,6 +101,8 @@ sv-SE:
               missing_first_name: ^Ange förnamn.
             last_name:
               missing_last_name: ^Ange efternamn.
+            email:
+              missing_email: ^Skriv in e-mail.  
             access:
               share_contact: ^Ange användarna som du vill dela kontakten med.
         lead:
