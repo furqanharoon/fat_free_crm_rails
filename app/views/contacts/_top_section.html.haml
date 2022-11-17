@@ -1,4 +1,3 @@
-
 = hook(:contact_top_section, self, f: f) do
   .section
     %table
@@ -12,12 +11,18 @@
           = f.text_field :last_name
       %tr
         %td
-          .label #{t :email}:
+          .label.top{ class: "#{Setting.require_email ? 'req' : nil}" }  #{t :email}:
           = f.text_field :email
         %td= spacer
         %td
           .label #{t :phone}:
           = f.text_field :phone
+        %td
+      %tr
+        %td  
+          %br/
+          %label Qualification:
+          = f.text_field :qualification
 
     %table
       = fields_for(@account) do |a|
