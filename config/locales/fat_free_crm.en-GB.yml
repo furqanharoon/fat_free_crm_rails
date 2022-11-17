@@ -70,6 +70,7 @@ en-GB:
   meeting: Meeting
   money: Money
   trip: Trip
+  competition: Competition
   overdue: Overdue
   due_asap: As Soon As Possible
   due_today: Today
@@ -125,6 +126,8 @@ en-GB:
               missing_first_name: ^Please specify first name.
             last_name:
               missing_last_name: ^Please specify last name.
+            email:
+              missing_email: ^Please enter email  
             access:
               share_contact: ^Please specify users with whom to share the contact.
         lead:
