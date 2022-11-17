@@ -9,7 +9,7 @@ class TasksController < ApplicationController
   before_action :set_current_tab, only: %i[index show]
   before_action :update_sidebar, only: :index
 
-  # GET /tasks
+  # GET /
   #----------------------------------------------------------------------------
   def index
     @view = view
@@ -28,6 +28,10 @@ class TasksController < ApplicationController
     @task = Task.tracked_by(current_user).find(params[:id])
     respond_with(@task)
   end
+
+  def show_task
+    @task = Task.tracked_by(current_user).find(params[:id])
+  end   
 
   # GET /tasks/new
   #----------------------------------------------------------------------------
@@ -68,7 +72,7 @@ class TasksController < ApplicationController
   def create
     @view = view
     @task = Task.new(task_params) # NOTE: we don't display validation messages for tasks.
-
+    @user = current_user
     respond_with(@task) do |_format|
       if @task.save
         update_sidebar if called_from_index_page?
@@ -177,7 +181,8 @@ class TasksController < ApplicationController
       :completed_at,
       :deleted_at,
       :background_info,
-      :calendar
+      :calendar,
+      :description
     )
   end
 
