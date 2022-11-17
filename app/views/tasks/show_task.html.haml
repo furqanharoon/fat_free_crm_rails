@@ -1,0 +1,39 @@
+%h3 Displaying Task
+
+%p
+  Task created by:
+  %b= @task.user.name
+%p
+  Task Name:
+  %b= @task.name
+
+- if @task.description.present?
+  %p
+    Task Description:
+    %b= @task.description
+
+- if @task.background_info.present?
+  %p
+    Background Information:
+    %b= @task.background_info
+%p
+  Due at:
+  %b= @task.due_at  
+%p
+  Task Category:
+  %b= @task.category  
+
+- if @task.priority.present?
+  %p
+    Task Priority:
+    %b= @task.priority
+
+- if @task.bucket.present?
+  %p
+    Task Deadline:
+    %b= @task.bucket 
+
+- if @task.assigned_to.present?
+  %p
+    Task assigned to:
+    %b= @task.assigned_to   
