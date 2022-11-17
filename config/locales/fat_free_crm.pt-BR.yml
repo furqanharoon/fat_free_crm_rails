@@ -70,6 +70,7 @@ pt-BR:
   meeting: Encontro
   money: Dinheiro
   trip: Viagem
+  competition: Concorrência
   overdue: Overdue
   due_asap: Assim que possível
   due_today: Hoje
@@ -124,6 +125,8 @@ pt-BR:
               missing_first_name: ^Por favor, informe o primeiro nome.
             last_name:
               missing_last_name: ^Por favor, informe o último nome.
+            email:
+              missing_email: ^Digite o e-mail
             access:
               share_contact: ^Por favor, informe usuários com quem desejas compartilhar este contato.
         lead:
