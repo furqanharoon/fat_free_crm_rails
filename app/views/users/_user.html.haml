@@ -28,6 +28,9 @@
         - if @user.mobile.present?
           = t(:mobile) + ":"
           = content_tag(:b, @user.mobile)
+        - if @user.skype.present?
+          = t(:skype) + ":"
+          = content_tag(:b, @user.skype)  
 
 - if Setting.per_user_locale
   %script= render "languages"
