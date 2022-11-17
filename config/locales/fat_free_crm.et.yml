@@ -70,6 +70,7 @@ et:
   meeting: Koosolek
   money: Raha
   trip: Reis
+  competition: Konkurentsi
   overdue: Üle tähtaja
   due_asap: Esimesel võimalusel
   due_today: Täna
@@ -125,6 +126,8 @@ et:
               missing_first_name: ^Palun täida eesnimi.
             last_name:
               missing_last_name: ^Palun täida perekonnanimi.
+            email:
+              missing_email: ^Sisestage e-posti aadress.  
             access:
               share_contact: ^Palun märgi kontaktiga seotud kasutajad.
         lead:
