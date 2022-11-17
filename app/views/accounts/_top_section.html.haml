@@ -15,8 +15,11 @@
           = f.select :category, Setting.unroll(:account_category), { selected: (@account.category || "other").to_sym, include_blank: t(:other) }, { style: "width:160px", class: 'select2' }
         %td= spacer
         %td
-          .label #{t :rating}:
-          = rating_select "account[rating]", { id: :account_rating, selected: @account.rating, style: "width:160px" }
+          %br/
+          = f.label :rating
+          .rateyo
+          %p
+          = f.hidden_field :rating, id: 'rating', value: ''
 
       - if Setting.background_info && Setting.background_info.include?(:account)
         %tr
@@ -27,3 +30,25 @@
       = render partial: "/shared/tags", locals: {f: f, span: 3}
 
       = hook(:account_top_section_bottom, self, f: f)
+
+:javascript
+    // rating ajax
+    var rat;
+    var rating;
+    $(function () {
+    $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+      starWidth: "20px",
+      rat = data.rating;
+      // setting data in hidden field
+      document.getElementById('rating').value = rat;
+   });
+   $('.submit').click( function(){
+  //  var d= $('#des').val();
+   $.ajax({
+         url: "/accounts",
+         data: $('.form').serialize(),
+          type: 'GET',
+          dataType: script
+      });
+   }
+   )});
