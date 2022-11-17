@@ -39,6 +39,11 @@ module TasksHelper
             method: :get, remote: true)
   end
 
+  ##show page
+  def link_to_show_task(task , bucket)
+    link_to(t(:show) , show_task_task_path(task, bucket: bucket, view: @view))
+  end
+
   #----------------------------------------------------------------------------
   def link_to_task_delete(task, bucket)
     link_to(t(:delete) + "!", task_path(task, bucket: bucket, view: @view),
