@@ -58,6 +58,7 @@ it:
   meeting: Incontro
   money: Soldi
   trip: Viaggio
+  competition: Concorrenza
   overdue: Scaduto
   due_asap: Prima possibile
   due_today: Oggi
@@ -107,6 +108,8 @@ it:
               missing_first_name: ^Specificare il nome.
             last_name:
               missing_last_name: ^Specificare il cognome.
+            email:
+              missing_email: ^Inserisci l'email.  
             access:
               share_contact: ^Specificare gli utenti con cui contdividere il contatto.
         lead:
