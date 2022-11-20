@@ -3,12 +3,12 @@
     %tr
       %td(colspan="5")
         .label.top.req #{t :name}:
-        = f.text_field :name, autofocus: true, style: "width:500px"
+        = f.text_field :name, autofocus: true, style: "width:500px", placeholder: "Enter task name"
     %tr
       %td(colspan="5")
         %br/
         %label Description:
-        = f.text_field :description, style: "width:500px"   
+        = f.text_field :description, style: "width:500px", placeholder: "Enter task description"   
     %tr 
       %td
         %br/

@@ -4,15 +4,15 @@
       %tr
         %td(colspan="5")
           .label.top.req #{t :name}:
-          = f.text_field :name, autofocus: true, style: "width:500px"
+          = f.text_field :name, autofocus: true, style: "width:500px", placeholder: "Enter your name"
       %tr
         %td
           .label #{t :start_date}:
-          = f.text_field :starts_on, value: f.object.starts_on, style: "width:110px", autocomplete: :off, class: 'date'
+          = f.text_field :starts_on, value: f.object.starts_on, style: "width:110px", autocomplete: :off, class: 'date', placeholder: "Select start date"
         %td= spacer
         %td
           .label #{t :end_date}:
-          = f.text_field :ends_on, value: f.object.ends_on, style: "width:110px", autocomplete: :off, class: 'date'
+          = f.text_field :ends_on, value: f.object.ends_on, style: "width:110px", autocomplete: :off, class: 'date', placeholder: "Select end date"
         %td= spacer
         %td
           .label #{t :status}:

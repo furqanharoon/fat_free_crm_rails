@@ -9,19 +9,19 @@
       %tr
         %td
           .label.top #{t :job_title}:
-          = f.text_field :title
+          = f.text_field :title, placeholder: "Enter your job title"
         %td= spacer
         %td
           .label.top #{t :company}:
-          = f.autocomplete_field :company, autocomplete_account_name_leads_path
+          = f.autocomplete_field :company, autocomplete_account_name_leads_path, placeholder: "Enter your company name"
       %tr
         %td
           .label #{t :alt_email}:
-          = f.text_field :alt_email
+          = f.text_field :alt_email, placeholder: "Enter your alternative email"
         %td= spacer
         %td
           .label #{t :mobile}:
-          = f.text_field :mobile
+          = f.text_field :mobile, placeholder: "Enter your mobile number"
       %tr
         %td
           = render "shared/address", f: f, asset: @lead, type: 'business', title: :address

@@ -4,7 +4,7 @@
       %tr
         %td
           .label.req.top #{t :name}:
-          = f.text_field :name, autofocus: true, style: "width:325px"
+          = f.text_field :name, autofocus: true, style: "width:325px", placeholder: "Enter your name"
         %td= spacer
         %td
           .label.req.top #{t :stage}:
@@ -14,19 +14,19 @@
       %tr
         %td
           .label #{t :close_date}:
-          = f.text_field :closes_on, value: f.object.closes_on, style: "width:110px;", autocomplete: :off, class: 'date'
+          = f.text_field :closes_on, value: f.object.closes_on, style: "width:110px;", autocomplete: :off, class: 'date', placeholder: "Enter closing date"
         %td= spacer
         %td
           .label #{t :probability} (%):
-          = f.text_field :probability, style: "width:110px; text-align:right;"
+          = f.text_field :probability, style: "width:110px; text-align:right;", placeholder: "Enter probability"
         %td= spacer
         %td
           .label #{t :amount} #{t :currency}:
-          = f.text_field :amount, style: "width:110px; text-align:right;"
+          = f.text_field :amount, style: "width:110px; text-align:right;", placeholder: "Enter amount"
         %td= spacer
         %td
           .label #{t :discount} #{t :currency}:
-          = f.text_field :discount, style: "width:110px; text-align:right;"
+          = f.text_field :discount, style: "width:110px; text-align:right;", placeholder: "Enter currency"
 
     = fields_for(@account) do |a|
       = a.hidden_field :user_id

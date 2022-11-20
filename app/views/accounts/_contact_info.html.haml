@@ -12,23 +12,23 @@
             %tr
               %td
                 .label #{t :phone_toll_free}:
-                = f.text_field :toll_free_phone, style: "width:154px"
+                = f.text_field :toll_free_phone, style: "width:154px", placeholder: "Enter phone toll-free"
               %td= spacer
               %td
                 .label #{t :phone}:
-                = f.text_field :phone, style: "width:154px"
+                = f.text_field :phone, style: "width:154px", placeholder: "Enter phone number"
               %td= spacer
               %td
                 .label #{t :fax}:
-                = f.text_field :fax, style: "width:154px"
+                = f.text_field :fax, style: "width:154px", placeholder: "Enter FAX"
       %tr
         %td
           .label.top #{t :website}:
-          = f.text_field :website
+          = f.text_field :website, placeholder: "Enter website URL"
         %td= spacer
         %td
           .label.top Email:
-          = f.text_field :email
+          = f.text_field :email, placeholder: "Enter your email"
       %tr
         %td
           = render "shared/address", f: f, asset: @account, type: :billing, title: :billing_address

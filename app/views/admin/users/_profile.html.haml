@@ -4,19 +4,19 @@
     %tr
       %td
         .label.top.req #{t :username}:
-        = f.text_field :username
+        = f.text_field :username, placeholder: "Enter your username"
       %td= spacer
       %td
         .label.top.req #{t :email}:
-        = f.text_field :email
+        = f.text_field :email, placeholder: "Enter your email"
     %tr
       %td
         .label #{t :password}:
-        = f.password_field :password
+        = f.password_field :password, placeholder: "Enter your password"
       %td= spacer
       %td
         .label #{t :password_confirmation}:
-        = f.password_field :password_confirmation
+        = f.password_field :password_confirmation, placeholder: "Enter your password again"
     %tr
       %td(colspan=3)
         .check_box(style="margin-top:6px")
@@ -31,19 +31,19 @@
     %tr
       %td
         .label #{t :first_name}:
-        = f.text_field :first_name
+        = f.text_field :first_name, placeholder: "Enter your first name"
       %td= spacer
       %td
         .label #{t :last_name}:
-        = f.text_field :last_name
+        = f.text_field :last_name, placeholder: "Enter your last name"
     %tr
       %td
         .label #{t :job_title}:
-        = f.text_field :title
+        = f.text_field :title, placeholder: "Enter your job title"
       %td= spacer
       %td
         .label #{t :company}:
-        = f.text_field :company
+        = f.text_field :company, placeholder: "Enter your company name"
 
 .subtitle #{t :group_memberships}
 .section
