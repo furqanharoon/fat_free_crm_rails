@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration[4.2]
       t.string :last_name,        limit: 32
       t.string :title,            limit: 64
       t.string :company,          limit: 64
-      t.string :alt_email,        limit: 64
+      t.string :alt_email,        limit: 64 
       t.string :phone,            limit: 32
       t.string :mobile,           limit: 32
       t.string :aim,              limit: 32
