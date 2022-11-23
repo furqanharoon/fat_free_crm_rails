@@ -88,6 +88,8 @@ class User < ActiveRecord::Base
       .select('DISTINCT(users.id), users.*')
   }
 
+  scope :all_except, ->(user) { where.not(id: user) }
+
 
   validates :email,
             presence: { message: :missing_email },
