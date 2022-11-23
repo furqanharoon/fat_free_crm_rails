@@ -14,7 +14,7 @@ class Admin::UsersController < Admin::ApplicationController
   # GET /admin/users.xml                                                   HTML
   #----------------------------------------------------------------------------
   def index
-    @users = get_users(page: params[:page])
+    @users = get_users(page: params[:page]).all_except(current_user)
     respond_with(@users)
   end
 
