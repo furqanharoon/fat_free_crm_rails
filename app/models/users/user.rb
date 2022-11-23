@@ -88,20 +88,23 @@ class User < ActiveRecord::Base
       .select('DISTINCT(users.id), users.*')
   }
 
+
   validates :email,
             presence: { message: :missing_email },
             length: { minimum: 3, maximum: 254 },
-            uniqueness: { message: :email_in_use, case_sensitive: false },
+            uniqueness: { message: :email_in_use, case_sensitive: true },
             format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  validates :alt_email,
+            uniqueness: { case_sensitive: true }          
   validates :username,
-            uniqueness: { message: :username_taken, case_sensitive: false },
+            uniqueness: { message: :usernametaken, case_sensitive: false },
             presence: { message: :missing_username },
             format: { with: /\A[a-z0-9_-]+\z/i }
   validates :password,
             presence: { if: :password_required? },
             confirmation: true
                      
-   #---------------------------------------------------------------------------
+  #---------------------------------------------------------------------------
   def login
     @login || self.username || self.email
   end          
