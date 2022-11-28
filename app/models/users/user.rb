@@ -90,14 +90,13 @@ class User < ActiveRecord::Base
 
   scope :all_except, ->(user) { where.not(id: user) }
 
-
+  validates_uniqueness_of :alt_email, :allow_nil => true
+  
   validates :email,
             presence: { message: :missing_email },
             length: { minimum: 3, maximum: 254 },
             uniqueness: { message: :email_in_use, case_sensitive: true },
-            format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-  validates :alt_email,
-            uniqueness: { case_sensitive: true }          
+            format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }   
   validates :username,
             uniqueness: { message: :usernametaken, case_sensitive: false },
             presence: { message: :missing_username },
