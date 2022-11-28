@@ -14,6 +14,11 @@ class UsersController < ApplicationController
 
   respond_to :html, only: %i[show new]
 
+  #----------------------------------------------------------------------------
+  def index
+    @users = User.all
+  end
+
   # GET /users/1
   # GET /users/1.js
   #----------------------------------------------------------------------------
