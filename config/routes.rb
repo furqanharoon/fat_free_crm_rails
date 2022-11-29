@@ -27,6 +27,11 @@ Rails.application.routes.draw do
         get :opportunities_overview
         post :create_alt_email
       end
+      member do
+       put :suspend_user
+       put :reactive_user
+       delete :delete_user
+      end
     end
   end
   get 'activities' => 'home#index'
